@@ -1,0 +1,95 @@
+/**
+ * @name Janitorial
+ * @description A personal blocklist of annoying shit I don't like. Based on Dubyas's hacks.
+ * @author Harvey (@harvestsorts)
+ * @website https://github.com/DubyaDude/DubyasCleanupOfDiscord/blob/main/DubyasCleanupOfDiscord.css
+*/
+
+
+/* (ENG only) General tweak -- Compact chat box by hiding stuff you can get in the emoji menu anyway */
+/* I'd rather do all that clicking than have this junk on my screen to save a click. */
+div[aria-label="Send a gift"] { display: none; } /* Hide nitro gifting button, I'm broke */
+div[aria-label="Open GIF picker"] { display: none; } /* Hide GIF picker button */
+div[aria-label="Open sticker picker"] { display: none; } /* Hide sticker picker button */
+/* button[aria-label="Apps"] { display: none; }  Fuck your app launcher */
+div[class^="channelAppLauncher_"]{ display:none !important; } /* version that works on ALL languages */;
+/* Thanks: ??? (original hack finder), Dubyas (div trick), FlurryShy (apps code, both versions) */
+/* 8/5/25: fixed it from button to div so it appears properly. */
+
+/* Brokie tweak -- Hide all Nitro upsells */
+div[id="profile-customization-tab"] > div[class^="container_"] {  display:none; } /* Disable profile edit page upsell */
+[class^="nitroTextAndBadge_"], button:has([class^="premiumIcon_"]),
+[class^="emojiSection_"] [class^="flex_"] div[class*="text-sm-normal"]
+{   display: none; } /* Disable emoji inspection upsell (ty Regalia) */
+/* Thanks: Regalia (Emoji inspection tip), Dubyas (Original source) */
+
+/* General tweak -- Hide things in DMs page */
+/* Only the Nitro tab as of now. */
+li div a[href="/store"] /* Hide 'Ntiro' Tab */
+{ display: none; }
+/* Thanks: Dubyas (original source) */
+
+/* Hide DM Wallpapers */
+/* As of writing, no global toggle exists in Discord. It is handled per DM. Will disable it once that exists. */
+[class^="chatContent_"] > [class^="wallpaperContainer_"] { display:none; }
+[class^="chatContent_"] > [class^="thumbhashContainer_"] { display:none; }
+/* Thanks: Dubyas (original source) */
+
+/* General tweak -- Disable some bullshit on profiles */
+[class^="profileEffects"] { display: none; } /* Profile effects */
+/* Uncommenting the below line will also block them in the profile view. */
+/* svg[class^="avatarDecoration"] { display: none; } */ /* Apply this to profile view too */
+img[class^="avatarDecoration"], /* Apply this to decorations in messages */
+[class*="bannerSVGWrapper_"] > mask > image { display: none; } /* Fix 'View Profile' selector with hidden decoration */
+[class*=avatarDecorationHint_] > foreignObject /* Compatibility code, idk what it does but it seems important */
+{
+  width: 80px;
+  height: 80px;
+  mask: url(#svg-mask-avatar-status-round-80);
+}
+[class*=avatarDecorationHint_] /* Compatibility code, idk what it does but it seems important */
+{
+  top: -80px;
+  left: 0px;
+  position: relative;
+}
+/* Thanks: Dubyas (original source) */
+
+/* General tweak - -hide nameplates */
+/* We didn't have these in 2019, I think you should be as unspecial as the rest of us! */
+/* div[class*=videoContainer_] { display: none; } 
+div[class*="container"]:has(div[class*=videoContainer_]) { background: none !important; } */
+/* Thanks: Regalia (Emoji inspection tip), Dubyas (Original source) */
+
+/* General tweak -- Fuck that sticker popup */
+/* Hide annoying sticker popup window that appears when you type */
+.channelTextArea-1FufC0 > .container-1ZA19X { display: none; }
+/* Thanks: Dubyas (original source) */
+
+/* General tweak -- fuck thread suggestions */
+div[class="threadSuggestionBar_"] { display: none; }
+/* Thanks: Fauxtecual */
+
+/* General tweak -- Nuke "Events" */
+div[class^="containerDefault_"]:has(div[data-list-item-id^="channels___upcoming-events"]){ display:none; }
+/* Thanks: FlurryShy */
+
+/* Vencord tweak -- Fuck translate on the chat bar */
+[class^="buttons__"]:hover button[aria-label="Open Translate Modal"] { display:none; }
+/* Thanks: plechovka (awareness of this tweak)
+
+/* General tweak -- Hide 'Explore Discoverable Servers'/'Discover' in server page */
+div[class*="listItem"]:has(div[data-list-item-id="guildsnav___guild-discover-button"]) { display: none; }
+/* Thanks: Dubyas (original source) */
+
+/* Removes floating server list footer (currently only contains Discover) (ty gongo and provi) */
+/*
+ul[data-list-id='guildsnav'] > div[class^=footer] { display: none; }
+div[class*=unreadMentionsFixedFooter] { bottom: 0px; }
+*/
+
+/* General tweak -- Less intense Super Reactions */
+div[class^="effectsWrapper"] { display: none; } 
+img.emoji { opacity: 100; }
+div[class*="shakeReaction"] { animation: none !important; }
+/* Thanks: Regalia (Code), Dubyas (Original source) */
