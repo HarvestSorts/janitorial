@@ -7,7 +7,7 @@ Thanks all who made me aware of some of these tweaks. I tried to credit you best
 Just download `janitor.theme.css` and put it in `%appdata%/vesktop/themes`
 
 ## Vencord - Online method
-Copy `[https://github.com/HarvestSorts/janitorial/raw/refs/heads/main/janitorial.theme.css` and paste it in your online themes section.
+Copy `https://github.com/HarvestSorts/janitorial/raw/refs/heads/main/janitorial.theme.css` and paste it in your online themes section.
 
 ## Any other Discord mod
 Idk put it in your themes folder or copy the css into your css editor
